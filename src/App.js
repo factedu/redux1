@@ -1,24 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
 
+import {Provider} from 'react-redux'
+import CountBy2 from './components/CountBy2';
+import Counter from './components/Counter';
+import CountMinusBtn from './components/CountMinusBtn';
+import CountPlusBtn from './components/CountPlusBtn';
+import store from './store';
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider store={store}>
+      <Counter />
+      <CountBy2 />
+      <CountMinusBtn />
+      <CountPlusBtn/>
+    </Provider>
   );
 }
 
